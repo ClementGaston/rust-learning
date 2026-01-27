@@ -7,7 +7,7 @@ fn main() {
         "Which reverted give {}°",
         convert_fahrenheit_to_celsius(fahrenheit)
     );
-    println!("Fib of 6 is {}", fibonacci(6));
+    // println!("Fib of 6 is {}", fibonacci(6));
 }
 
 fn convert_fahrenheit_to_celsius(fahrenheit: f32) -> f32 {
