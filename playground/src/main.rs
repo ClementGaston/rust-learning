@@ -1,37 +1,17 @@
+struct User {
+    active: bool,
+    username: String,
+    email: String,
+    sign_in_count: u64,
+}
+
 fn main() {
-    let my_string = String::from("hello world");
+    let mut user1 = User {
+        active: true,
+        username: String::from("someusername123"),
+        email: String::from("someone@example.com"),
+        sign_in_count: 1,
+    };
 
-    // `first_word` works on slices of `String`s, whether partial or whole.
-    let word = first_word(&my_string[0..6]);
-    let word = first_word(&my_string[..]);
-    // `first_word` also works on references to `String`s, which are equivalent
-    // to whole slices of `String`s.
-    let word = first_word(&my_string);
-
-    let my_string_literal = "hello world";
-
-    // `first_word` works on slices of string literals, whether partial or
-    // whole.
-    let word = first_word(&my_string_literal[0..6]);
-    let word = first_word(&my_string_literal[..]);
-
-    // Because string literals *are* string slices already,
-    // this works too, without the slice syntax!
-    let word = first_word(my_string_literal);
-}
-
-fn change(some_string: &mut String) {
-    some_string.push_str(", world");
-}
-
-fn first_word(s: &str) -> &str {
-    let bytes = s.as_bytes();
-
-    for (i, &item) in bytes.iter().enumerate() {
-        if item == b' ' {
-            return &s[0..i];
-        }
-    }
-
-    &s[..]
+    user1.email = String::from("anotheremail@example.com");
 }
